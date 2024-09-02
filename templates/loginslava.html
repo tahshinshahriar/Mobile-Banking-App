@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style1.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" method="POST" action="/login">
+                <input type="text" placeholder="username" name = "username" />
+                <input type="password" placeholder="password" name = "password" />
+                <div>
+                    <div class="radio1">
+                        <div class="radio">
+                            <label><input type="radio" name="acctype" value="client"> Client</label>
+                        </div>
+                        <div class="radio1">
+                            <label><input type="radio" name="acctype" value="bt"> Bank Teller</label>
+                        </div>
+                    </div>
+                    <button>login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

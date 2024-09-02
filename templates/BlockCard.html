@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block A Card</title>
+    <link rel="stylesheet" href="static/SendMoney.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/chome"><img src="static/logo.png" alt="" class="logo2"></a></div>
+            <ul>
+                <li><a href="/chome">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+<br><br><br>
+    <center><div class="container">
+        <br>
+        <header>Block Your Credit/Debit card</header></center>
+        <span class="title">WARNING! : Blocking a Card may result in forbidding all sorts of Transaction with the card.</span>
+        <form action="blockProc" method="POST">
+            <div class="form first">
+                <div class="details personal">
+
+                    <div class="fields">
+                        
+                    <span class="title">Select the Card</span>
+                   
+                    <div class="input-field">
+                        <select name="type" id="type" required>
+                            <option value="Any">Select your Card</option>
+                            <option value="Debit">Debit Card</option>
+                            <option value="Credit">Credit Card</option>
+                        </select>
+                    </div>
+                    <div id="err">{{errmsg}}</div>
+                        
+                    </div>
+                    <br><br>
+                    
+                    <button id="myButton" class="nextBtn">
+                        <span class="btnText">Block Card</span>
+                    </button>
+                    <button id="myButton" class="nextBtn">
+                        <a href="/chome">Cancel</a>
+                    </button>
+                </div>
+                
+            </div>
+        </form>
+    </div></center>
+    <br><br>
+    
+</body>
+<script>
+    const type = document.getElementById('type');
+    const myButton = document.getElementById('myButton');
+
+    type.addEventListener('change', () => {
+    if (type.value === 'Select your Card') {
+        myButton.disabled = true;
+    } else {
+        myButton.disabled = false;
+    }
+    });
+
+</script>
+<footer>
+    <div class="footer-content">
+       
+        <h4>T Bank </h3>
+        <p>"The Better Way To Bank"</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 T Bank. </p>
+    </div>
+</footer>
+</html>

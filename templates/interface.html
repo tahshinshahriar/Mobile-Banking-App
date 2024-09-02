@@ -1,0 +1,14 @@
+<script>
+    $(document).ready(function() {
+      $('.card-single').click(function() {
+        var cardId = $(this).attr('id');
+        $.ajax({
+          type: 'POST',
+          url: '/card/' + cardId,
+          success: function(response) {
+            $('body').html(response);
+          }
+        });
+      });
+    });
+  </script>

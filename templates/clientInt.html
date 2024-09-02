@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Bank User Account</title>
+    <link rel="stylesheet" href="static/clientINT.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .options{
+        position: center;
+        align-items: center;
+    }
+
+        button{
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            height: 45px;
+            max-width: 200px;
+            width: 100%;
+            border: none;
+            outline: none;
+            color: white;
+            background: rgb(214, 30, 30);
+            margin: 25px 0;
+            transition: all 0.3s linear;
+            cursor: pointer;
+        }
+
+        form button:hover{
+            background-color:rgb(245, 37, 37);
+        }
+    </style>
+</head>
+<body>
+    
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="/chome"><img src="static/logo.png" alt="" class="logo2"></a></div>
+                <ul>
+                    <li><a href="/chome">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <button id="button"><a href="/">Sign Out</a></button>
+                </ul>
+            </div>
+        </nav>
+        <center>
+            <div class="options">
+                <button class="nextBtn">
+                    <span class="btnText"> <a href="/transferFunds">Transfer Funds</a></span>
+                </button>
+                <button class="nextBtn">
+                    <span class="btnText"> <a href="/sendMoney">Send Money</a></span>
+                </button>
+                
+                <button class="nextBtn">
+                    <span class="btnText"> <a href="/wireTransfer">Wire Transfer</a></span>
+                </button>
+    
+                
+                <button class="nextBtn">
+                    <span class="btnText"> <a href="/autoPayments">Set Automatic Payment</a></span>
+                </button>
+        </center>
+        <!--Main stuffs-->
+        <main>
+            <div class="page-header">
+                <div>
+                    <h1>MY ACCOUNTS</h1>
+                    <small>Welcome {{name}}, Monitor your aaccount activity below:</small>
+                </div>
+
+                <div class="cards">
+                    <div class="card-single" id="card1">
+                        <div class="card-flex">
+                            <div class="card-info">
+                                <div class="card-head">
+                                    <span><a href="/checkings">Chequing Account - {{caccno}}</a></span>
+                                    <small>Balance:</small>
+                                </div>
+                                <h2>{{cbalance}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-single" id="card2">
+                        <div class="card-flex">
+                            <div class="card-info">
+                                <div class="card-head">
+                                    <span><a href="/savings">Savings Account - {{saccno}}</a></span>
+                                    <small>Balance:</small>
+                                </div>
+                                <h2>{{sbalance}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-single" id="card3">
+                        <div class="card-flex">
+                            <div class="card-info">
+                                <div class="card-head">
+                                    <span><a href="/credits">Credit Account - {{ccaccno}}</a></span>
+                                    <small>Balance:</small>
+                                </div>
+                                <h2>{{ccbalance}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+        </main>
+
+
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">Additional Services:</h1>
+                <div class="services-list">
+                    <div>
+                        
+                        <h2>Apply for a loan</h2>
+                        <p>IN NEED OF A LOAN? It's never been so simple. T Bank offers upto 10,000$ Personal Loans.  </p>
+                        <a href="/applyLoan">Learn more</a>
+                    </div>
+                    <div>
+                        
+                        <h2>Apply for a credit card</h2>
+                        <p>Choose the credit card that’s right for you. Earn up to $850 in value in the first 12 months, including up to 45,000 bonus T+ points and first year annual fee waived.1</p>
+                        <a href="/applyCredit">Learn more</a>
+                    </div>
+                    <div>
+                        
+                        <h2>Open a savings account</h2>
+                        <p>With the TPLUS Savings Account, you can earn a savings rate of up to 5.00%* for 5 months with:
+                            Regular Interest1 (1.50%) + Premium Period Interest2 (0.85% - 1.15%) + Package Interest Rate Boost3 (0.05% or 0.10%)+ Welcome Bonus Interest Rate* (2.25%)</p>
+                        <a href="/openSavings">Learn more</a>
+                    </div>
+                    <div>
+                    
+                        <h2>Add payee</h2>
+                        <p>Add a Payee</p>
+                        <a href="/addPayee">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('.card-single').click(function() {
+              var cardId = $(this).attr('id');
+              $.ajax({
+                type: 'POST',
+                url: '/card/' + cardId,
+                success: function(response) {
+                  $('body').html(response);
+                }
+              });
+            });
+          });
+        </script>
+</body>
+
+<footer>
+    <div class="footer-content">
+        <ul class="socials">
+            <li><a href="/settings"><i class="fa fa-solid fa-gear"></i></i></a></li>
+            <li><a href="#"><i class="fa fa-sharp fa-solid fa-bell"></i></a></li>
+            
+        </ul>
+        <h4>T Bank </h3>
+        <p>"The Better Way To Bank"</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 T Bank. </p>
+    </div>
+</footer>
+</html>
+
+
+
+
+
+
+

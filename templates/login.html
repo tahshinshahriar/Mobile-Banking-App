@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="static/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href=""><img src="static/logo.png" alt="" class="logo2"></a></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="form-box">
+            <form id="client" action="/login" method="POST" class="input-group">
+                <label>
+                    <input type="checkbox" name="btnVal" value="cl" checked>
+                    Client
+                </label>
+                
+                <label>
+                    <input type="checkbox" name="btnVal" value="bt">
+                    Bank Teller
+                </label>
+
+                <input type="text" class="input-field" name="clusername" placeholder="Enter Username" required>
+                <input type="text" class="input-field" name="clpasswd" placeholder="Enter Password" required>
+                <div style="color: red; font-weight: bold;">{{errmsg}}</div>
+                <br><br>
+                <button class="submit-btn">Log In</button>
+            </form>
+            <form id="bank-teller" action="/login" method="POST" class="input-group">
+                <input type="text" class="input-field" name="btusernam" placeholder="Enter Banker Username" required>
+                <input type="text" class="input-field" name="btpasswd" placeholder="Enter Banker Password" required>
+                <br><br>
+                <button class="submit-btn">Log In</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][name="btnVal"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        checkboxes.forEach(otherCheckbox => {
+                            if (otherCheckbox !== checkbox) {
+                                otherCheckbox.checked = false;
+                            }
+                        });
+                    }
+                });
+            });
+
+
+    </script>
+</body>
+<footer>
+    <div class="footer-content">
+        <h4>T Bank Inc. </h3>
+        <p>"The Better Way To Bank"</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 T Bank Inc. </p>
+    </div>
+</footer>
+
+</html>

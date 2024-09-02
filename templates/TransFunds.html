@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Funds between Accounts</title>
+    <link rel="stylesheet" href="static/TransFunds.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/chome"><img src="static/logo.png" alt="" class="logo2"></a></div>
+            <ul>
+                <li><a href="/chome">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+<br><br><br>
+    <center><div class="container">
+        <br>
+        <header>Transfer Funds between my own Accounts</header></center>
+        <form action="/transfundProc" method="POST">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Step-1: Choose Accounts:</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>From Account</label>
+                            <select name="fromAcc" id="type">
+                                <option value="Any">Select An Account</option>
+                                <option value="Savings">Savings Account</option>
+                                <option value="Checkings">Chequing Account</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>To Account</label>
+                            <select name="toAcc" id="type">
+                                <option value="Any">Select An Account</option>
+                                <option value="Savings">Savings Account</option>
+                                <option value="Checkings">Chequing Account</option>
+                            </select>
+                        </div>
+                        <br><br>
+                        <span class="title">Step-2: Select Amount:</span>
+                        <div class="input-field">
+                            <label>Amount ($):</label>
+                            <input id="amount" type="number" placeholder="Enter Amount" name="amount">
+                        </div>
+                        
+                    </div>
+                    <br><br>
+                    
+                    <button class="nextBtn">
+                        <span class="btnText">Transfer</span>
+                    </button>
+                    <button><a href="/chome">Cancel</a></button>
+                </div>
+                
+            </div>
+        </form>
+    </div></center>
+    
+</body>
+<footer>
+    <div class="footer-content">
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-solid fa-gear"></i></i></a></li>
+            <li><a href="#"><i class="fa fa-sharp fa-solid fa-bell"></i></a></li>
+            
+        </ul>
+        <h4>T Bank </h3>
+        <p>"The Better Way To Bank"</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 T Bank. </p>
+    </div>
+</footer>
+</html>

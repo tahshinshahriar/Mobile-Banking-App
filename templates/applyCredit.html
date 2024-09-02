@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/applyCredit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Apply for a Credit Card</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/chome"><img src="static/logo.png" alt="" class="logo2"></a></div>
+            <ul>
+                <li><a href="/chome">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <button id="button"><a href="/">Sign Out</a></button>
+            </ul>
+        </div>
+    </nav>
+    <center>
+    <div class="container">
+        <header>Welcome {name}, Please read the credit card that is right for you</header>
+        <br>
+        <img id="CC" src="static/master.jpg" alt="">
+        <header>T Bank WideLevel Mastercard</header>
+        <p>Earn up to $850 in value in the first 12 months, including up to 45,000 bonus T+ points and first year annual fee waived. Earn 6 T+ points2 on every $1 CAD you spend in Canada at Sobeys, Safeway, FreshCo, Foodland and more. 
+        <br><br>Annual fee: $120
+        Interest rates: 15% (0.15)
+        Credit Limit:2000$
+        Minimum Account balance Needed: 500$</p>
+        <br><br>
+        <header>Credit Card Application form</header>
+        <form action="/creditProccess" method="POST">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Loan Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Account Balance</label>
+                            <input type="number" placeholder="Enter Account Balance" name = "balance"required>
+                        </div>
+                    </div>
+                    <br><br>
+                    <button class="nextBtn">
+                        <span class="btnText">Create a Credit Account</span>
+                    </button>
+                    <button class="nextBtn">
+                        <span><a href="/chome">Cancel</a></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>{{errmsg}}</div>
+    </center>
+</body>
+<footer>
+    <div class="footer-content">
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-solid fa-gear"></i></i></a></li>
+            <li><a href="#"><i class="fa fa-sharp fa-solid fa-bell"></i></a></li>
+            
+        </ul>
+        <h4>T Bank </h3>
+        <p>"The Better Way To Bank"</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 T Bank. </p>
+    </div>
+</footer>
+</html>

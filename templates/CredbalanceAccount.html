@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Balance Account</title>
+        <link rel="stylesheet" href="CSS/bAcc.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href=""><img src="CSS/logo.png" alt="" class="logo2"></a></div>
+                <ul>
+                    <li><a href="/chome">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+       
+        <main>
+            <div class="page-header">
+                <div>
+                    <h1>MY ACCOUNTS</h1>
+                    <small>Welcome {name}, Monitor your aaccount activity below:</small>
+                </div>
+
+                <div class="cards">
+                    <div class="card-single">
+                        <div class="card-flex">
+                            <div class="card-info">
+                                <div class="card-head">
+                                    <span>{accounttype} - {accno}</span>
+                                    <small>Balance:</small>
+                                </div>
+                                <h2>{balance}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main> 
+        <center>
+            <div class="transTable">
+                <h1>Transaction Record</h1>
+                <div class="transTable">
+                    <h1>Transaction Record</h1>
+                    <ul>
+                        {% for transaction in transactions %}
+                        <li>{{ transaction }}</li>
+                        {% endfor %}
+                    </ul>
+                
+                </div>
+            </div>
+        </center> 
+    </body>
+    <footer>
+        <div class="footer-content">
+            
+            <h4>T Bank </h3>
+            <p>"The Better Way To Bank"</p>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2023 T Bank. </p>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete An Account</title>
+    <link rel="stylesheet" href="static/SendMoney.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/chome"><img src="static/logo.png" alt="" class="logo2"></a></div>
+            <ul>
+                <li><a href="/chome">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+<br><br><br>
+    <center><div class="container">
+        <br>
+        <header>Delete your existing Account</header></center>
+        <span class="title" style="color: rgb(214,30,30)">WARNING! : 1. Deleting may result in removing all sorts of Transaction records and data. </span>
+        <p style="color: rgb(214,30,30)">WARNING! 2. You cannot delete your Chequing Account and need to have one to continue using the app.</p>
+        <form action="delProc">
+            <div class="form first">
+                <div class="details personal">
+
+                    <div class="fields">
+                        
+                    <span class="title" style="color: rgb(214,30,30)">Select the Account</span>
+                   
+                    <div class="input-field">
+                        <select name="type" id="type" required>
+                            <option value="Any" >Select your Account</option>
+                            <option value="Savings">Savings Account - {{saccno}}</option>
+                            <option value="Credit">Credit Account - {{credaccno}}</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <div class="input-field">
+                        <label style="color: rgb(214,30,30)">Enter Your Password to continue</label>
+                        <input id="amount" type="text" placeholder="Enter your Password" name="passwd" required >
+                    </div>
+                        
+                    </div>
+                    <br><br>
+                    
+                    <button id="myButton" class="nextBtn">
+                        <span class="btnText">Delete Account</span>
+                    </button>
+                </div>
+                
+            </div>
+        </form>
+    </div></center>
+    <br><br>
+    
+</body>
+<script>
+    const type = document.getElementById('type');
+    const myButton = document.getElementById('myButton');
+
+    type.addEventListener('change', () => {
+    if (type.value === 'Select your Account') {
+        myButton.disabled = true;
+    } else {
+        myButton.disabled = false;
+    }
+    });
+
+</script>
+<footer>
+    <div class="footer-content">
+        <h4>T Bank </h3>
+        <p>"The Better Way To Bank"</p>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 T Bank. </p>
+    </div>
+</footer>
+</html>

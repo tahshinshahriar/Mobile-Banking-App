@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    
+}
+.navbar{
+    background: rgb(214, 30, 30);
+    width: 99%;
+    font-family: 'Nunito Sans', sans-serif;
+    padding-right: 15px; 
+    padding-left: 15px; 
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+.logo2{
+    width:200px;
+    height:100px;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+li a{
+    color: white;
+    font-size: 18px;
+    
+    margin-right: 25px;
+}
+#button{
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+button a{
+    color: white;
+    
+    font-size: 15px;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(214, 30, 30);
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 300px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: rgb(214, 30, 30);
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+
+body{
+    min-height: 100vh;
+    
+    align-items: center;
+    justify-content: center;
+    background: whitesmoke;
+}
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgb(214, 30, 30) ;
+}
+
+.container header{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px ;
+    background-color: rgb(214, 30, 30);
+}
+
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff;
+}
+
+.container form .details{
+    margin-top: 30px;
+}
+
+.container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container form .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    margin: 4px 0;
+    flex-direction: column;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgb(214, 30, 30);
+}
+
+.input-field input[type="date"]{
+    color: #707070;
+}
+
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    background: rgb(214, 30, 30);
+    margin: 25px 0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color:rgb(245, 37, 37);
+}
+#display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    background: rgb(214, 30, 30);
+    margin: 25px 0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+#display:hover{
+    background-color: rgb(245, 37, 37) ;
+}

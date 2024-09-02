@@ -1,0 +1,202 @@
+*{
+    text-decoration:none;
+    font-family: 'Nunito Sans', sans-serif;
+    
+}
+body{
+    min-height:100vh;
+}
+
+
+.navbar{
+    background: rgb(214, 30, 30);
+    font-family: 'Nunito Sans', sans-serif;
+    padding-right: 15px; 
+    padding-left: 15px; 
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+.logo2{
+    width:200px;
+    height:100px;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+li a{
+    color: white;
+    font-size: 18px;
+    
+    margin-right: 25px;
+}
+#button{
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+button a{
+    color: white;
+    
+    font-size: 15px;
+}
+
+/*Services*/
+#services{
+    background-color: whitesmoke
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: white;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top:20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background:  rgb(214, 30, 30) ;
+    transform: translateY(-10px);
+}
+
+
+/*Main*/
+main{
+    background-color: whitesmoke;
+}
+
+.cards{
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(e,1fr);
+    grid-gap: 3rem;
+}
+
+.card-single{
+    background:white;
+    padding: 1rem;
+    box-shadow: 4px 4px 10px rgb(214, 30, 30);
+    border-radius: 2px;
+}
+.card-flex{
+    display: grid;
+    grid-template-columns: 70% auto;
+    align-items: center;
+}
+.card-head span{
+    display: block;
+    text-transform: uppercase;
+    color: #555;
+    font-size: .9rem;
+}
+
+.card-head small{
+    font-weight: 600;
+    color: #555;
+}
+.card-info h2{
+    font-size: 2.2 rem;
+    color: #333;
+}
+
+/*footer*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(214, 30, 30);
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 300px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: rgb(214, 30, 30);
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+
