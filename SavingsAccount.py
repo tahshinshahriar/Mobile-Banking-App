@@ -1,5 +1,4 @@
 import BalanceAccount
-import ClientAccount
 
 
 class SavingsAccount(BalanceAccount.BalanceAccount):

@@ -23,9 +23,6 @@ class UserAccount:
     def getUserName(self):
         return self.username
 
-    def getAccountNumber(self):
-        return self._accountNumber
-
     def getPassword(self):
         return self._password
 

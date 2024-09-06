@@ -37,7 +37,7 @@ class ClientAccount(UserAccount.UserAccount):
 
     # This method takes 'newEmail' as a parameter and replaces the previous email addresss of the client with a new email address.
     def changeEmail(self, newEmail: str):
-        if newEmail == "" or newEmail == None:
+        if newEmail == "" or newEmail is None:
             return False
         self.e_mail = newEmail
         return True
@@ -51,7 +51,7 @@ class ClientAccount(UserAccount.UserAccount):
 
     # This method takes 'newAddr' as a parameter and replaces the previous Address of the client with a new Address.
     def changeAddress(self, newAddr: str):
-        if newAddr == "" or newAddr == None:
+        if newAddr == "" or newAddr is None:
             return False
         self.address = newAddr
         return True

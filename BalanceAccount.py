@@ -10,8 +10,6 @@ import UserAccount
 import ClientAccount
 
 
-
-
 class BalanceAccount:
     def __init__(self, master: ClientAccount.ClientAccount, balance: float, paymentNetwork: str = "Visa"):
         self.master = master
@@ -20,7 +18,7 @@ class BalanceAccount:
         self.card = Card.Card(paymentNetwork=paymentNetwork)
         self.transactions = []
         self.autoPayments = []
-        self.observers = [master]  
+        self.observers = [master]
         self.notifOnAmount = 500
         self.creationDate = datetime.date.today()
 
