@@ -7,31 +7,22 @@ import Payee
 import EtransferPayee
 import Card
 import IDGenerator
+import UserAccount
+import ClientAccount
 
-if TYPE_CHECKING:
-    import ClientAccount
-    import UserAccount
+
 
 
 class BalanceAccount:
-    def __init__(
-        self,
-        master: ClientAccount.ClientAccount,
-        balance: float,
-        paymentNetwork: str = "Visa",
-    ):
+    def __init__(self, master: ClientAccount.ClientAccount, balance: float, paymentNetwork: str = "Visa"):
         self.master = master
         self.accountNumber = IDGenerator.IDGenerator.generateBalanceAccountID()
         self.balance = balance
         self.card = Card.Card(paymentNetwork=paymentNetwork)
         self.transactions = []
         self.autoPayments = []
-        self.observers = [
-            master
-        ]  # add the client account of this balance account to observe by default
-        self.notifOnAmount = (
-            500  # notify the subscribers on this amount (the observer pattern)
-        )
+        self.observers = [master]  
+        self.notifOnAmount = 500
         self.creationDate = datetime.date.today()
 
     def addObserver(self, observer: UserAccount.UserAccount):
@@ -45,7 +36,6 @@ class BalanceAccount:
             self.observers.remove(observer)
 
     def notifyObservers(self, notification: str):
-        import UserAccount
 
         for obs in self.observers:
             if isinstance(obs, UserAccount.UserAccount):
@@ -125,9 +115,7 @@ class BalanceAccount:
         # Case if both email and phone were given
         if email and phone:
             for payee in self.master.payees:
-                if isinstance(payee, EtransferPayee.EtransferPayee) and (
-                    payee.email == email or payee.phone == phone
-                ):
+                if isinstance(payee, EtransferPayee.EtransferPayee) and (payee.email == email or payee.phone == phone):
                     for account in main.AccountInterface.clientAcc:
                         # If found in the same bank (our system)
                         if account.phone == phone or account.e_mail == email:
@@ -141,9 +129,7 @@ class BalanceAccount:
                             return etransfer
 
                     # If not found, the receiver argument is just the email string
-                    etransfer = Etransfer.Etransfer(
-                        self, amount, email, phone, str(self), email
-                    )
+                    etransfer = Etransfer.Etransfer(self, amount, email, phone, str(self), email)
                     self.withdraw(amount)
                     self.newTransaction(etransfer)
                     return etransfer
@@ -153,10 +139,7 @@ class BalanceAccount:
         # Case if just the email was given
         elif email:
             for payee in self.master.payees:
-                if (
-                    isinstance(payee, EtransferPayee.EtransferPayee)
-                    and payee.email == email
-                ):
+                if (isinstance(payee, EtransferPayee.EtransferPayee) and payee.email == email):
                     for account in main.AccountInterface.clientAcc:
                         if account.e_mail == email:
                             etransfer = Etransfer.Etransfer(

@@ -6,7 +6,7 @@ import Payee
 import Etransfer
 import BalanceAccount
 import main
-import Loan
+
 
 
 class ClientAccountTest(unittest.TestCase):

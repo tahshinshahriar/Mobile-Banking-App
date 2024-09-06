@@ -44,7 +44,7 @@ class ClientAccount(UserAccount.UserAccount):
 
     # This method takes 'newPhone' as a parameter and replaces the previous phone number of the client with a new phone number.
     def changePhone(self, newPhone: str):
-        if newPhone == "" or newPhone == None:
+        if newPhone == "" or newPhone is None:
             return False
         self.phone_no = newPhone
         return True
