@@ -7,8 +7,6 @@ import Etransfer
 import BalanceAccount
 import main
 
-
-
 class ClientAccountTest(unittest.TestCase):
 
     def setUp(self):

@@ -48,7 +48,7 @@ def login():
         password = request.form["clpasswd"]
         global teller
         teller = bank.login(username, password, "bt")
-        if teller != False or None:
+        if teller:
             return tellerInterface(teller)
         else:
             return "Input and Select all the fields properly"
@@ -57,7 +57,7 @@ def login():
         password = request.form["clpasswd"]
         global client
         client = bank.login(username, password, "cl")
-        if client != False or None:
+        if client:
             return clientInterface(client)
         else:
             return render_template(
@@ -93,7 +93,7 @@ def reg():
 
     clientp = teller.registerClient(username, name, email, phone, addr)
 
-    if clientp != False or None:
+    if clientp:
         return render_template(
             "regsuccess.html",
             name=clientp.name_of_user,
@@ -117,7 +117,7 @@ def findp():
     accno = request.form["accno"]
     clientp = teller.findClient(int(accno))
 
-    if clientp != False or None:
+    if clientp:
         return render_template(
             "regsuccess.html",
             name=clientp.name,
@@ -190,7 +190,7 @@ def loanp():
     eDate = request.form["edate"]
     endDate = datetime.strptime(eDate, "%Y-%m-%d")
     loanSuccess = client.applyLoan(amount, loanType, startDate, endDate)
-    if loanSuccess == True:
+    if loanSuccess:
         return render_template(
             "applyLoanSuccess.html",
             balance=client.loans[-1].amount,
@@ -216,7 +216,7 @@ def Credp():
     credSuccess = client.openCreditAccount(float(credBalance))
     if float(credBalance) < 500:
         return render_template("applyCredit.html", errmsg="Amount must be atleast 500")
-    if credSuccess == True:
+    if credSuccess:
         return render_template(
             "applyCreditSuccess.html",
             accno=client.creditAccounts[0].accountNumber,
@@ -264,7 +264,7 @@ def Savingsapp():
 def savingsProc():
     savingsBalance = request.form["amount"]
     credSuccess = client.openSavingsAccount()
-    if credSuccess == True:
+    if credSuccess:
         return render_template(
             "openSavingsSuccess.html",
             name=client.username,
@@ -293,7 +293,7 @@ def details():
 def phonenoProc():
     phoneno = request.form["phoneno"]
     status = client.changePhone(phoneno)
-    if status == True:
+    if status:
         return render_template("changeDetSuccess.html")
     else:
         return render_template("ChangeDet.html", errmsg="Input Phone No properly")
@@ -303,7 +303,7 @@ def phonenoProc():
 def Proc():
     email = request.form["email"]
     status = client.changePhone(email)
-    if status == True:
+    if status:
         return render_template("changeDetSuccess.html")
     else:
         return render_template("ChangeDet.html", errmsg="Input Email properly")
@@ -313,7 +313,7 @@ def Proc():
 def addrProc():
     addr = request.form["addr"]
     status = client.changePhone(addr)
-    if status == True:
+    if status:
         return render_template("changeDetSuccess.html")
     else:
         return render_template("ChangeDet.html", errmsg="Input Address properly")
