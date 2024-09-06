@@ -10,15 +10,25 @@ class TellerAccount(UserAccount.UserAccount):
         super().__init__(username, name, password=password)
         self.employeeID = IDGenerator.IDGenerator.generateEmployeeID()
 
-    def registerClient(self, username: str, name: str, email: str, phone: str, address: str, password: str = UserAccount.UserAccount.passwordGenerator()):
-        #Iterate over all the clients
+    def registerClient(
+        self,
+        username: str,
+        name: str,
+        email: str,
+        phone: str,
+        address: str,
+        password: str = UserAccount.UserAccount.passwordGenerator(),
+    ):
+        # Iterate over all the clients
         for client in main.AccountInterface.clientAcc:
             if client.getUserName() == username:
-                return None #if a client with the same username exists, return None
-        client = ClientAccount.ClientAccount(username, name, password, email, phone, address)
+                return None  # if a client with the same username exists, return None
+        client = ClientAccount.ClientAccount(
+            username, name, password, email, phone, address
+        )
         main.AccountInterface.clientAcc.append(client)
         return client
-    
+
     def findClient(self, accountNumber: int):
         for client in main.AccountInterface.clientAcc:
             if client.getAccountNumber() == accountNumber:

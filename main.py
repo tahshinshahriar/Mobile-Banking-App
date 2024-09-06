@@ -15,7 +15,7 @@ class AccountInterface:
             return False
         else:
             return False
-    
+
     # Remove the clientAccount from the array and return true else return False
     def closeAccount(self, username, password):
         for x in self.clientAcc:
@@ -23,5 +23,3 @@ class AccountInterface:
                 self.clientAcc.remove(x)
                 return True
         return False
-
-

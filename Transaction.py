@@ -4,8 +4,15 @@ import datetime
 import IDGenerator
 import BalanceAccount
 
+
 class Transaction:
-    def __init__(self, master: BalanceAccount.BalanceAccount, amount: float, sender: str="", receiver: str=""):
+    def __init__(
+        self,
+        master: BalanceAccount.BalanceAccount,
+        amount: float,
+        sender: str = "",
+        receiver: str = "",
+    ):
         self.master = master
         self.sender = sender
         self.receiver = receiver

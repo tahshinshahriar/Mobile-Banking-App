@@ -1,6 +1,7 @@
 import unittest
 import Card
 
+
 class CardTest(unittest.TestCase):
     def setUp(self):
         self.card = Card.Card()
@@ -12,5 +13,6 @@ class CardTest(unittest.TestCase):
         self.card.unlockCard()
         self.assertFalse(self.card.locked)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

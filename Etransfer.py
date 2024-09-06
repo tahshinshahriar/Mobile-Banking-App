@@ -2,8 +2,17 @@ from __future__ import annotations
 import Transaction
 import BalanceAccount
 
+
 class Etransfer(Transaction.Transaction):
-    def __init__(self, master: BalanceAccount.BalanceAccount, amount: float, email: str=None, phone: str=None, sender: str="", receiver: str=""):
+    def __init__(
+        self,
+        master: BalanceAccount.BalanceAccount,
+        amount: float,
+        email: str = None,
+        phone: str = None,
+        sender: str = "",
+        receiver: str = "",
+    ):
         super().__init__(master, amount, sender, receiver)
         self.email = email
         self.phone = phone
