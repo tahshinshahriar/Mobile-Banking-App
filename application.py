@@ -474,7 +474,7 @@ def autoPayments():
     option_names = []
     for x in client.payees:
         option_names.append(x.name)
-    app.jinja_env.globals.update(len=len)
+    application.jinja_env.globals.update(len=len)
     return render_template(
         "AutoPay.html", option_values=option_values, option_names=option_names
     )
@@ -511,7 +511,7 @@ def sendMoney():
         if isinstance(x, EtransferPayee.EtransferPayee):
             option_values.append(x.payeeID)
             option_names.append(x.name)
-    app.jinja_env.globals.update(len=len)
+    application.jinja_env.globals.update(len=len)
     return render_template(
         "SendMoney.html", option_values=option_values, option_names=option_names
     )
