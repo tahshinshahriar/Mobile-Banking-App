@@ -12,7 +12,7 @@ main.AccountInterface.tellerAcc.append(
 )
 main.AccountInterface.clientAcc.append(
     ClientAccount.ClientAccount(
-        "slavas",
+        "slavass",
         "Slava",
         "slava123",
         "slava89@gmail.com",
