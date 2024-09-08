@@ -62,3 +62,4 @@ jobs:
           environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }}
           version_label: v${{ github.run_number }}
           deployment_package: deployment-package.zip
+          wait_for_deployment: false
